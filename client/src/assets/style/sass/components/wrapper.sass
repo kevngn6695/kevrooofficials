@@ -1,0 +1,123 @@
+@import "../animation/animation.sass"
+
+.about-img-wrapper
+    width: 35%
+    position: absolute
+    left: 5%
+    height: 100%
+
+.about-title-wrapper
+    width: 35%
+    height: 50%
+    position: absolute
+    left: 5%
+    height: 100%
+
+.about-social-media-wrapper
+    width: 125px
+    position: absolute
+    height: 25px
+    bottom: 10%
+    left: 10%
+    background-color: white
+    border-radius: 30px
+    z-index: 1
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.5)
+
+.about-email-wrapper
+    position: absolute
+    bottom: 15%
+    left: 10%
+
+.tooltip-wrapper
+    width: 50px
+    height: 20px
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    border-top-left-radius: 30px
+    border-top-right-radius: 30px
+    border-bottom-left-radius: 30px
+    border: 1px solid rgba(0,0,0,0.1)
+    transition: all 0.5s ease-in-out
+    // box-shadow: -10px 10px 3px -5px rgba(0,0,0,0.1)
+    z-index: 1
+    background: white
+    &.home-tooltip, &.about-tooltip, &.phone-tooltip
+        right: 70%
+    &.home-tooltip
+        top: -10%
+    &.about-tooltip
+        top: 20%
+    &.contact-tooltip
+        top: 50%
+        width: 55px
+    @for $i from 1 through 3
+        &:nth-of-type(#{$i}).open
+            $duration: 0.5s + ($i * 0.25s) // Calculate duration based on item index
+            -webkit-animation: $duration ease 0s normal forwards 1 fadein
+            animation: $duration ease 0s normal forwards 1 fadein
+
+.today-info-wrapper
+    position: absolute
+    top: 0
+    height: 100px
+    width: 100%
+    z-index: 0
+    height: 100%
+    .today-wrapper
+        // border: 1px solid rgba(0,0,0,0.1)
+        width: 120px
+        background: white
+        height: 30px
+        float: left
+        border-radius: 30px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 51px
+        position: absolute
+        transition: all 0.5s ease-in
+        &.greeting
+            border-top: 1px solid rgba(0,0,0,0.1)
+            transform: rotate(-90deg)
+            top: 94px
+            left: -60px
+            &.in
+                box-shadow: 0px -10px 10px -5px rgba(0,0,0,0.1)
+        &.full-date, &.full-time, &.temperature
+            top: 5%
+            &.out
+                box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 1),inset -2px -2px 4px rgba(255, 255, 255, 1),inset 2px -2px 2px rgba(255, 255, 255, .075),inset -2px 2px 4px rgba(0, 0, 0, .15)
+        &.full-date
+            left: 3%
+        &.full-time, &.temperature
+            width: 70px
+            position: relative
+            margin-right: 3%
+            float: right
+        // background: linear-gradient(225deg, #ffffff, #e6e6e6)
+        // box-shadow:  -13px 13px 17px #cfcfcf,13px -13px 17px #ffffff
+
+.main-title-wrapper
+    width: 100%
+    position: absolute
+    height: 100%
+    top: 0
+    left: 0
+
+.contact-wrapper
+    position: absolute
+    width: 50%
+    top: 20%
+    right: 0
+    min-height: 80%
+
+
+.main-skillboard-wrapper
+    width: 100%
+    height: 598px
+
+.main-footer-wrapper
+    width: 100%

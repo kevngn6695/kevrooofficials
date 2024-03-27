@@ -1,0 +1,42 @@
+@use "sass:map"
+
+@import "../utils/function.sass"
+
+$social-media-width: ("facebook": 15px, "twitter": 15px, "instagram": 15px, "tiktok": 15px, "linkedin": 15px)
+
+$social-media-padding: ("facebook": 5px, "twitter": 5px, "instagram": 5px, "tiktok": 5px, "linkedin": 5px)
+
+$social-media: (width: $social-media-width, padding: $social-media-padding)
+
+@include social-media($social-media)
+@debug $social-media
+
+  
+/* Menu Symbol Styles: Defines styles for menu symbol elements: Includes width, height, background color, margin, border radius, and transition effects. */
+.nav-menu-symbol 
+    width: 19px
+    height: 2px
+    background-color: #000
+    margin: 1px 0
+    border-radius: 30px
+    transition: all 0.4s ease-in-out
+
+/* Adjustments for Specific Child Elements: Styles for specific child elements of the menu symbol. */
+.nav-menu-symbol:nth-child(1),
+.nav-menu-symbol:nth-child(3) 
+  width: 10px
+
+/* Open State Adjustments: Styles for menu symbol elements in the open state. */
+.open .nav-menu-symbol:nth-child(1),
+.open .nav-menu-symbol:nth-child(3) 
+  width: 10px
+
+.open .nav-menu-symbol:nth-child(1) 
+  transform: rotate(45deg) translate(-1px, 2px)
+
+.open .nav-menu-symbol:nth-child(2) 
+  transform: rotate(-45deg)
+
+.open .nav-menu-symbol:nth-child(3) 
+  transform: rotate(45deg) translate(2.4px, -4px)
+

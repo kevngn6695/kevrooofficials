@@ -1,0 +1,104 @@
+@import "../fonts/fonts.sass"
+
+.about-closed-btn
+    width: 35px
+    height: 35px
+    border-radius: 100%
+    border: none
+    cursor: pointer
+    background-color: white
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    top: 1%
+    left: 1%
+    &::before, &::after
+        content: ""
+        position: absolute
+        border-radius: 30px
+        background-color: black
+
+    &::before
+        width: 1px
+        height: 20px
+        transform: translate(-50%, 0%) rotate(45deg)
+    &::after
+        width: 20px
+        height: 1px
+        transform: translate(0%, -50%) rotate(45deg)
+
+.nav-menu-btn
+    width: 35px
+    height: 35px
+    background: white
+    border: none
+    position: absolute
+    left: 50%
+    transform: translate(-50%,0)
+    border-radius: 50%  
+    flex-direction: column
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: all 0.5s ease-in-out
+    // border: 1px solid black
+
+.show-btn
+    width: 100px
+    height: 30px
+    border-radius: 30px
+    background: white
+    position: absolute
+    bottom: 30%
+    left: 10%
+    outline: none
+    border: none
+    cursor: pointer
+    transition: all 0.5s ease-in
+    box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),-6px -6px 10px rgba(255, 255, 255, .5), 6px 6px 8px rgba(255, 255, 255, .075), -6px 6px 10px rgba(0, 0, 0, .15)
+    &:hover
+        box-shadow: none
+    &:active
+        box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7), inset -2px -2px 4px rgba(255, 255, 255, .5), inset 2px 2px 2px rgba(255, 255, 255, .075), inset -2px 2px 4px rgba(0, 0, 0, .15)
+    &.cover-letter
+        left: 22%
+span
+    font-size: 11px
+    font-family: "Custom_Gelion"
+
+
+.contact-closed-btn
+    width: 35px
+    height: 35px
+    border-radius: 100%
+    border: none
+    cursor: pointer
+    background-color: white
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    top: 5%
+    left: 5%
+    &::before, &::after
+        content: ""
+        position: absolute
+        border-radius: 30px
+        background-color: black
+
+    &::before
+        width: 1px
+        height: 20px
+        transform: translate(-50%, 0%) rotate(45deg)
+    &::after
+        width: 20px
+        height: 1px
+        transform: translate(0%, -50%) rotate(45deg)
+.contact-submit-btn
+    width: 100px
+    height: 30px
+    position: absolute
+    bottom: 20%
+    border-radius: 40px
+    border: none

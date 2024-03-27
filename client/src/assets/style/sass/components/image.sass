@@ -1,0 +1,41 @@
+$page-icon: (home: "home", about: "user", phone: "phone")
+
+img
+    border: 0
+
+.about-signature-img
+    width: 350px
+
+.about-img
+    width: 350px
+    border-radius: 20px
+    border: none
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.5)
+
+.main-img
+    width: 250px
+    position: absolute
+    border-radius: 50%
+    top: 50%
+    right: 20%
+    transform: translate(50%, -50%)
+    transition: clip-path 0.3s ease
+
+.nav-img
+    width: 20px
+    height: 20px
+    position: relative
+    transform: translate(25%, 25%)
+    transition: all 0.5s ease-in
+    @each $page, $name in $page-icon
+        &.#{$page}-icon:hover
+            @if $page == "home"
+                background-image: url("../../../media/images/icons/#{$name}-icon-black/#{$name}-icon-512-black.png")
+            @else if $page == "about"
+                background-image: url("../../../media/images/icons/#{$name}-icon-black/#{$name}-icon-96-black.png")
+            @else if $page == "phone"
+                background-image: url("../../../media/images/icons/#{$name}-icon-black/#{$name}-icon-100-black.png")
+            background-position: center
+            background-repeat: no-repeat
+            background-size: cover
+            transition: all 0.5s ease-in

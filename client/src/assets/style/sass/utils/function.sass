@@ -1,0 +1,11 @@
+@use "sass:map"
+
+$prefixes-by-browser: ("firefox": moz, "safari": webkit, "ie": ms)
+
+@mixin social-media($social-media)
+    @each $props, $values in $social-media
+        @each $platform, $value in $values
+            .#{$platform}-symbol
+                width: map-get($social-media, width, $platform)
+                padding: map-get($social-media, padding, $platform)
+                

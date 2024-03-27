@@ -1,0 +1,30 @@
+@import '../animation/animation.sass'
+
+.navbar
+    width: 50px
+    height: 335px
+    z-index: 1
+    // background: white
+    .nav-list
+        width: 100%
+        min-height: 30%
+        position: absolute
+        flex-direction: column
+        display: flex
+        justify-content: center
+        align-items: center
+        top: 15%
+        background: transparent
+    .nav-list-item
+        width: 30px
+        height: 30px
+        margin: 2.5px 0 2.5px 0
+        list-style: none
+        overflow: hidden
+        border-radius: 50%
+        transition: all 0.5s ease-in-out
+        @for $i from 1 through 3
+            &:nth-of-type(#{$i}).open
+                $duration: 1s + ($i * 0.25s) // Calculate duration based on item index
+                -webkit-animation: $duration ease 0s normal forwards 1 fadein
+                animation: $duration ease 0s normal forwards 1 fadein
