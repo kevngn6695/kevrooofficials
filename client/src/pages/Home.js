@@ -41,7 +41,7 @@ function Home(props) {
       classNameCircle: "html",
       classNameBar: "html",
       classNamePercent: "html",
-      percentage: "0%",
+      percentage: 0,
       classNameText: "html",
       skillName: "HTML",
     },
@@ -50,16 +50,25 @@ function Home(props) {
       classNameCircle: "css",
       classNameBar: "css",
       classNamePercent: "css",
-      percentage: "0%",
+      percentage: 0,
       classNameText: "css",
       skillName: "CSS",
+    },
+    {
+      classNameCard: "sass",
+      classNameCircle: "sass",
+      classNameBar: "sass",
+      classNamePercent: "sass",
+      percentage: 0,
+      classNameText: "sass",
+      skillName: "SASS",
     },
     {
       classNameCard: "js",
       classNameCircle: "js",
       classNameBar: "js",
       classNamePercent: "js",
-      percentage: "12%",
+      percentage: 12,
       classNameText: "js",
       skillName: "Javascript",
     },
@@ -68,7 +77,7 @@ function Home(props) {
       classNameCircle: "react",
       classNameBar: "react",
       classNamePercent: "react",
-      percentage: "0%",
+      percentage: 80,
       classNameText: "react",
       skillName: "React",
     },
@@ -245,10 +254,13 @@ function Home(props) {
           {skillbars.map((skillbar, index) => (
             <Skillbar
               key={index}
-              classNameCard={`card ${skillbar.classNameCard}`}
-              classNameCircle={`circle ${skillbar.classNameCircle}`}
-              classNameBar={`bar ${skillbar.classNameBar}`}
-              classNamePercent={`percent ${skillbar.classNamePercent}`}
+              size={80}
+              thickness={1}
+              percent={skillbar.percentage}
+              classNameCard={`skillbar-card ${skillbar.classNameCard}`}
+              classNameCircle={`skillbar-circle ${skillbar.classNameCircle}`}
+              classNameBar={`skillbar ${skillbar.classNameBar}`}
+              classNamePercent={`skillbar-percent ${skillbar.classNamePercent}`}
               percentage={`${skillbar.percentage}`}
               classNameText={skillbar.classNameText}
               skillName={skillbar.skillName}

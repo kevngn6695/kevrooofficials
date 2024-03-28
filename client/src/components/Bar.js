@@ -1,11 +1,13 @@
 import React from "react";
 
+import CircularProgress from "@mui/material/CircularProgress";
+
 import { BarProps } from "../utils/type";
 
 import "../assets/style/sass/components/bar.sass";
 
 function Bar(props) {
-  return <div className={props.className}>{props.children}</div>;
+  return <CircularProgress {...props} />;
 }
 
 Bar.propTypes = BarProps;
