@@ -73,6 +73,9 @@ export const SymbolProps = {
 
 export const SpiralProgressBarProps = {
   ...CommonProps,
+  size: PropTypes.number,
+  progress: PropTypes.number,
+  strokeWidth: PropTypes.number,
 };
 
 export const SkillbarProps = {

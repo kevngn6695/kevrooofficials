@@ -41,7 +41,7 @@ function Home(props) {
       classNameCircle: "html",
       classNameBar: "html",
       classNamePercent: "html",
-      percentage: 0,
+      percentage: 99,
       classNameText: "html",
       skillName: "HTML",
     },
@@ -50,7 +50,7 @@ function Home(props) {
       classNameCircle: "css",
       classNameBar: "css",
       classNamePercent: "css",
-      percentage: 0,
+      percentage: 90,
       classNameText: "css",
       skillName: "CSS",
     },
@@ -59,7 +59,7 @@ function Home(props) {
       classNameCircle: "sass",
       classNameBar: "sass",
       classNamePercent: "sass",
-      percentage: 0,
+      percentage: 81,
       classNameText: "sass",
       skillName: "SASS",
     },
@@ -68,7 +68,7 @@ function Home(props) {
       classNameCircle: "js",
       classNameBar: "js",
       classNamePercent: "js",
-      percentage: 12,
+      percentage: 79,
       classNameText: "js",
       skillName: "Javascript",
     },
@@ -264,6 +264,7 @@ function Home(props) {
               percentage={`${skillbar.percentage}`}
               classNameText={skillbar.classNameText}
               skillName={skillbar.skillName}
+              isMouseIn={isMouseIn}
             />
           ))}
         </Wrapper>

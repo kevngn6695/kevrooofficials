@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Card from "./Card";
 import Circle from "./shape/Circle";
@@ -12,24 +12,38 @@ import "../assets/style/sass/components/skillbar.sass";
 
 function Skillbar(props) {
   return (
-    <Card className={props.classNameCard} key={props.key}>
-      <Circle className={props.classNameCircle}>
+    <Card
+      className={`${props.classNameCard} ${
+        props.isMouseIn ? "open" : "closed"
+      }`}
+      key={props.key}
+    >
+      <Circle
+        className={`${props.classNameCircle} ${
+          props.isMouseIn ? "open" : "closed"
+        }`}
+      >
         <Bar
-          className={props.classNameBar}
+          className={`${props.classNameBar} ${
+            props.isMouseIn ? "open" : "closed"
+          }`}
           percent={props.percent}
-          variant="determinate"
           value={props.percent}
           size={props.size}
           thickness={props.thickness}
         />
-        <Box className="skillbar-box">
-          {/* <CircularProgress /> */}
+        <Box className={`skillbar-box ${props.isMouseIn ? "open" : "closed"}`}>
           <Heading className={props.classNamePercent} h5>
             {props.percentage}
           </Heading>
         </Box>
       </Circle>
-      <Heading className={props.classNameText} h6>
+      <Heading
+        className={`${props.classNameText} ${
+          props.isMouseIn ? "open" : "closed"
+        }`}
+        h6
+      >
         {props.skillName}
       </Heading>
     </Card>
