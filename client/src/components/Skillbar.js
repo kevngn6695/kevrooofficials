@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Card from "./Card";
 import Circle from "./shape/Circle";
@@ -11,37 +11,40 @@ import { SkillbarProps } from "../utils/type";
 import "../assets/style/sass/components/skillbar.sass";
 
 function Skillbar(props) {
+  const [isMouseIn, setIsMouseIn] = useState(false);
+
+  const handleDetectMouseIn = () => {
+    setIsMouseIn(true);
+  };
+
+  const handleDetectMouseOut = () => {
+    setIsMouseIn(false);
+  };
+
   return (
     <Card
-      className={`${props.classNameCard} ${
-        props.isMouseIn ? "open" : "closed"
-      }`}
+      className={`${props.classNameCard}`}
+      onMouseEnter={handleDetectMouseIn}
+      onMouseLeave={handleDetectMouseOut}
       key={props.key}
     >
-      <Circle
-        className={`${props.classNameCircle} ${
-          props.isMouseIn ? "open" : "closed"
-        }`}
-      >
+      <Circle className={`${props.classNameCircle}`}>
         <Bar
-          className={`${props.classNameBar} ${
-            props.isMouseIn ? "open" : "closed"
-          }`}
+          className={`${props.classNameBar} ${isMouseIn ? "open" : "closed"}`}
           percent={props.percent}
           value={props.percent}
           size={props.size}
+          isMouseIn={isMouseIn}
           thickness={props.thickness}
         />
-        <Box className={`skillbar-box ${props.isMouseIn ? "open" : "closed"}`}>
-          <Heading className={props.classNamePercent} h5>
+        <Box className={`skillbar-box ${isMouseIn ? "open" : "closed"}`}>
+          <Heading className={`${props.classNamePercent}`} h5>
             {props.percentage}
           </Heading>
         </Box>
       </Circle>
       <Heading
-        className={`${props.classNameText} ${
-          props.isMouseIn ? "open" : "closed"
-        }`}
+        className={`${props.classNameText} ${isMouseIn ? "open" : "closed"}`}
         h6
       >
         {props.skillName}

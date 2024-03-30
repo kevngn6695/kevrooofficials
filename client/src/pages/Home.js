@@ -262,9 +262,8 @@ function Home(props) {
               classNameBar={`skillbar ${skillbar.classNameBar}`}
               classNamePercent={`skillbar-percent ${skillbar.classNamePercent}`}
               percentage={`${skillbar.percentage}`}
-              classNameText={skillbar.classNameText}
+              classNameText={`skillbar-text ${skillbar.classNameText}`}
               skillName={skillbar.skillName}
-              isMouseIn={isMouseIn}
             />
           ))}
         </Wrapper>

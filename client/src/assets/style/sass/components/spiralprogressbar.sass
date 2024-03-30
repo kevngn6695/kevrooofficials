@@ -1,11 +1,28 @@
 .circular-progress 
   transform: rotate(-90deg)
 
+  transition: all 0.5s ease-in-out
+  &.open
+    opacity: 1
+    width: 100%
+  &.closed
+    width: 50%
+    opacity: 0
+
 .background 
   fill: none
   stroke: white
+  transition: all 0.5s ease-in-out
+  &.open
+    opacity: 1
+  &.closed
+    opacity: 0
 
 .progress 
   fill: none
   stroke: rgba(250, 198, 149, 1)
-  transition: stroke-dashoffset 0.3s ease
+  transition: stroke-dashoffset 0.3s ease, all 0.5s ease-in-out
+  &.open
+    opacity: 1
+  &.closed
+    opacity: 0

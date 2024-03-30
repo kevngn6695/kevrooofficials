@@ -3,7 +3,15 @@ import { CardProps } from "../utils/type";
 import "../assets/style/sass/components/card.sass";
 
 function Card(props) {
-  return <div className={props.className}>{props.children}</div>;
+  return (
+    <div
+      className={props.className}
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}
+    >
+      {props.children}
+    </div>
+  );
 }
 
 CardProps.propTypes = CardProps;

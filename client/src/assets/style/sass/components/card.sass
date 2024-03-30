@@ -1,7 +1,7 @@
 $skills: ("html", "css", "sass", "js", "react")
 
 .skillbar-card
-    width: 95px
+    width: 30px
     height: 150px
     align-items: center
     display: flex
@@ -13,7 +13,9 @@ $skills: ("html", "css", "sass", "js", "react")
     flex-wrap: wrap
     transition: all 0.5s ease-in
     box-shadow: -11px 10px 10px -5px rgba(0,0,0,0.1)
+
     &:hover
+        width: 95px
         box-shadow: -11px 10px 10px -5px rgba(0,0,0,0.5)
     @each $skill in $skills 
         &.#{$skill}

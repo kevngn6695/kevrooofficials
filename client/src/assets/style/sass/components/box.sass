@@ -1,5 +1,10 @@
 .skillbar-box
     position: absolute
     top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
+    transition: all 0.5s ease
+    &.open
+        left: 50%
+        transform: translate(-50%, -50%)
+    &.closed
+        left: 20%
+        top: 10%
