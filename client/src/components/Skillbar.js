@@ -27,11 +27,14 @@ function Skillbar(props) {
       onMouseEnter={handleDetectMouseIn}
       onMouseLeave={handleDetectMouseOut}
       key={props.key}
+      style={{
+        height: `${props.percent + 50}px`,
+        top: `calc(${props.percent}px + 70%)`,
+      }}
     >
       <Circle className={`${props.classNameCircle}`}>
         <Bar
           className={`${props.classNameBar} ${isMouseIn ? "open" : "closed"}`}
-          percent={props.percent}
           value={props.percent}
           size={props.size}
           isMouseIn={isMouseIn}

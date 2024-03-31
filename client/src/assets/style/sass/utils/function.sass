@@ -8,4 +8,16 @@ $prefixes-by-browser: ("firefox": moz, "safari": webkit, "ie": ms)
             .#{$platform}-symbol
                 width: map-get($social-media, width, $platform)
                 padding: map-get($social-media, padding, $platform)
-                
+
+        
+// Function to generate Fibonacci sequence up to a given number of terms
+@function fibonacci($n)
+    $fib-sequence: 0 1
+    @if $n < 2 
+        @return $fib-sequence // Return the initial sequence for $n less than 2
+    
+    @for $i from 3 through $n
+        $next-fib: nth($fib-sequence, -1) + nth($fib-sequence, -2)
+        $fib-sequence: append($fib-sequence, $next-fib)
+  
+    @return $fib-sequence

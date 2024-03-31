@@ -1,4 +1,6 @@
 $skills: ("html", "css", "sass", "js", "react")
+$skill-spacing: 10px
+$fibonacci-position: fibonacci(length($skills) + 1)
 
 .skillbar-card
     width: 30px
@@ -13,23 +15,11 @@ $skills: ("html", "css", "sass", "js", "react")
     flex-wrap: wrap
     transition: all 0.5s ease-in
     box-shadow: -11px 10px 10px -5px rgba(0,0,0,0.1)
-
     &:hover
         width: 95px
         box-shadow: -11px 10px 10px -5px rgba(0,0,0,0.5)
     @each $skill in $skills 
+        $index: index($skills, $skill) + 1
         &.#{$skill}
-            top: 85%
-        // @if $skill == "html"
-        //     &.#{$skill}
-        //         right: 35% 
-        // @else if $skill == "sass"
-        //     &.#{$skill}
-        //         right: 30%
-        // @else if $skill == "js"
-        //     &.#{$skill}
-        //         right: 20%
-        // @else if $skill == "react"
-        //     &.#{$skill}
-        //         right: 10%
-    
+            right: calc(30% - ($index - 1) * ($skill-spacing + 3%))
+

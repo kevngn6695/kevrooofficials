@@ -8,6 +8,7 @@ function Card(props) {
       className={props.className}
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
+      style={props.style}
     >
       {props.children}
     </div>
