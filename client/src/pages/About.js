@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Container from "../components/Container";
 import Image from "../components/Image";
@@ -25,7 +25,12 @@ import { AboutProps } from "../utils/type";
 import "../assets/style/sass/pages/about.sass";
 
 function About(props) {
+  const newDate = new Date();
+
   // const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [date, setDate] = useState(newDate); // Initialize the state for date
+
+  const currentYear = date.getFullYear();
 
   const socialMedia = [
     { icon: FacebookIcon, text: "facebook", href: "" },
@@ -34,6 +39,14 @@ function About(props) {
     { icon: TikTokIcon, text: "tiktok", href: "" },
     { icon: LinkedinIcon, text: "linkedin", href: "" },
   ];
+
+  // Effect hook for updating date and time continuously
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDate(new Date());
+    }, 100);
+    return () => clearInterval(intervalId); // Cleanup on component unmount
+  }, []); // Empty dependency array ensures the effect runs only once
 
   return (
     <Container className={props.className}>
@@ -77,7 +90,7 @@ function About(props) {
       <Container className="about-img-container">
         <Image className="about-img" src={KevImage1} />
       </Container>
-      <Footer className="footer about" />
+      <Footer className="footer about" currentYear={currentYear} />
     </Container>
   );
 }

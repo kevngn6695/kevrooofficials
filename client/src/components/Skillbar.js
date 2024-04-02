@@ -30,6 +30,7 @@ function Skillbar(props) {
       style={{
         height: `${props.percent + 50}px`,
         top: `calc(${props.percent}px + 70%)`,
+        marginLeft: `${props.percent}px`,
       }}
     >
       <Circle className={`${props.classNameCircle}`}>

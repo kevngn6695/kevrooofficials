@@ -1,7 +1,7 @@
 import React from "react";
 
 import { HeadingProps } from "../utils/type";
-
+import { motion } from "framer-motion";
 import "../assets/style/sass/components/heading.sass";
 
 function Heading(props) {
@@ -16,7 +16,11 @@ function Heading(props) {
 
   // Rendering the appropriate heading element with className and children props.
   if (level) {
-    return React.createElement(level, { className }, children);
+    return React.createElement(
+      motion[level],
+      { className, ...props },
+      children
+    );
   }
 
   // Returning null if no heading level prop is provided.

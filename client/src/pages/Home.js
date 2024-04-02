@@ -14,7 +14,7 @@ import Paragraph from "../components/Paragraph";
 import Loading from "../components/Loading";
 import Button from "../components/Button";
 
-// import Work from "./Work";
+import Work from "./Work";
 import ProfileImage from "../assets/media/images/images/kev-cropped-img.png";
 import ProfileImage1 from "../assets/media/images/images/kev-cropped-img-black.png";
 
@@ -111,6 +111,10 @@ function Home(props) {
   const dayIdx = date.getDay();
   const today = dayNames[dayIdx];
 
+  //Animation
+  const transition = { duration: 1, ease: [0.23, 0.2, 0.05, 0.9] };
+  const fadeOut = { opacity: 0, y: -20 };
+  const fadeIn = { opacity: 1, y: 0 };
   // const inputLists = [
   //   {
   //     className: "email-input",
@@ -224,16 +228,31 @@ function Home(props) {
             <Wrapper>
               <Image className="main-img" src={ProfileImage1} alt="Profile1" />
             </Wrapper>
+
             <Wrapper className="main-title-wrapper">
-              <Heading className="main-title name" h1>
+              <Heading
+                className="main-title name"
+                h1
+                initial={fadeOut}
+                animate={fadeIn}
+                transition={transition}
+              >
                 Kevroo
               </Heading>
               <Heading
+                initial={fadeOut}
+                animate={fadeIn}
+                transition={transition}
                 className="main-title title"
-                h1
+                h2
                 children={`UX/UI Designer, Frontend React Developer`}
               />
-              <Paragraph className="main-paragraph">
+              <Paragraph
+                className="main-paragraph"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={transition}
+              >
                 Crafting seamless digital experiences, one line of code at a
                 time,
                 <br /> to transform your vision into a captivating reality.
@@ -267,8 +286,8 @@ function Home(props) {
             />
           ))}
         </Wrapper>
-        {/* <Work className="work-container" />
-        <Info className="main-info-container">
+        <Work className="work-container" />
+        {/* <Info className="main-info-container">
           <Wrapper className="main-info-wrapper">
             <Heading className="info-title" h1>
               Let's get in touch
