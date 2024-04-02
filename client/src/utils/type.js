@@ -196,3 +196,7 @@ export const BlobProps = {
   fill: PropTypes.string,
   d: PropTypes.string.isRequired,
 };
+
+export const InfoProps = {
+  ...CommonProps,
+};

@@ -4,8 +4,8 @@ import React, { useState, useEffect } from "react";
 import Heading from "../components/Heading";
 import Image from "../components/Image";
 import Container from "../components/Container";
-// import Info from "../components/Info";
-// import TextInput from "../components/TextInput";
+import Info from "../components/Info";
+import TextInput from "../components/TextInput";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Skillbar from "../components/Skillbar";
@@ -112,17 +112,18 @@ function Home(props) {
   const today = dayNames[dayIdx];
 
   //Animation
-  const transition = { duration: 1, ease: [0.23, 0.2, 0.05, 0.9] };
+  const transition = { duration: 1, ease: [0.23, 0.2, 0.05, 0.9], delay: 0.75 };
   const fadeOut = { opacity: 0, y: -20 };
   const fadeIn = { opacity: 1, y: 0 };
-  // const inputLists = [
-  //   {
-  //     className: "email-input",
-  //     type: "text",
-  //     text: "Email Address",
-  //     placeholder: "Email",
-  //   },
-  // ];
+
+  const inputLists = [
+    {
+      className: "email-input",
+      type: "text",
+      text: "Email Address",
+      placeholder: "Email",
+    },
+  ];
 
   const urlLink = [
     { url: "/", text: "home", icon: HomeIcon, hover: HomeIconBlack },
@@ -287,7 +288,7 @@ function Home(props) {
           ))}
         </Wrapper>
         <Work className="work-container" />
-        {/* <Info className="main-info-container">
+        <Info className="main-info-container">
           <Wrapper className="main-info-wrapper">
             <Heading className="info-title" h1>
               Let's get in touch
@@ -296,7 +297,7 @@ function Home(props) {
           <Wrapper className="main-contact-wrapper">
             <TextInput className="main-form" inputLists={inputLists} />
           </Wrapper>
-        </Info> */}
+        </Info>
       </Container>
     </>
   );

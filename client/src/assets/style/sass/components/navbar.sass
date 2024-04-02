@@ -25,6 +25,6 @@
         transition: all 0.5s ease-in-out
         @for $i from 1 through 3
             &:nth-of-type(#{$i}).open
-                $duration: 1s + ($i * 0.25s) // Calculate duration based on item index
-                -webkit-animation: $duration ease 0s normal forwards 1 fadein
-                animation: $duration ease 0s normal forwards 1 fadein
+                $duration: 1s + ($i * 0.5s) // Calculate duration based on item index
+                -webkit-animation: $duration ease 0s normal forwards 1 fade-in
+                animation: $duration ease 0s normal forwards 1 fade-in
