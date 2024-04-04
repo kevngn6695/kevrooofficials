@@ -1,29 +1,31 @@
 import React from "react";
 
 import { TextInputProps, TextInputDefaultProps } from "../utils/type";
+import { motion } from "framer-motion";
+
 import "../assets/style/sass/components/textinput.sass";
 
 function TextInput(props) {
   return (
-    <form className={props.classNameForm} onSubmit={props.onSubmit}>
+    <motion.form className={props.classNameForm} onSubmit={props.onSubmit}>
       {props.inputLists.map((input) => (
-        <div className={props.classNameLabelInput}>
-          <label
+        <motion.div className={props.classNameLabelInput}>
+          <motion.label
             className={`${props.classNameLabel}`}
             for={input.id}
             name={input.id}
           >
             {input.text}
-          </label>
-          <input
+          </motion.label>
+          <motion.input
             className={`${props.classNameInput}`}
             id={input.id}
             type={input.type}
             placeholder={input.placeholder}
           />
-        </div>
+        </motion.div>
       ))}
-    </form>
+    </motion.form>
   );
 }
 

@@ -1,25 +1,26 @@
 import React from "react";
 
 import { TextFieldProps } from "../utils/type";
+import { motion } from "framer-motion";
 
 import "../assets/style/sass/components/textfield.sass";
 
 function TextField(props) {
   return (
-    <form className={props.classNameForm} onSubmit={props.onSubmit}>
-      <label
+    <motion.form className={props.classNameForm} onSubmit={props.onSubmit}>
+      <motion.label
         className={props.classNameLabel}
         for={props.name}
         name={props.name}
       >
         {props.text}
-      </label>
-      <textarea
+      </motion.label>
+      <motion.textarea
         className={props.classNameTextArea}
         id={props.id}
         name={props.name}
-      ></textarea>
-    </form>
+      ></motion.textarea>
+    </motion.form>
   );
 }
 

@@ -1,7 +1,6 @@
 import React from "react";
 
 import { CircleProps } from "../../utils/type";
-
 import "../../assets/style/sass/components/circle.sass";
 
 function Circle(props) {

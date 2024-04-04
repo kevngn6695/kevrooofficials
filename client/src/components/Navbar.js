@@ -9,6 +9,7 @@ import Tooltip from "./Tooltip";
 
 import { capitalizeFirst } from "../utils/tools";
 import { NavbarProps } from "../utils/type";
+import { motion } from "framer-motion";
 
 import "../assets/style/sass/components/navbar.sass";
 
@@ -29,7 +30,7 @@ function Navbar(props) {
   };
 
   return (
-    <nav className={props.className}>
+    <motion.nav className={props.className}>
       <Button
         className={`${props.classNameMenuBtn} ${showMenu ? "open" : "closed"}`}
         type="button"
@@ -38,10 +39,10 @@ function Navbar(props) {
         <Symbol type="menu" className="nav-menu-symbol" />
       </Button>
       {showMenu && (
-        <ul className={props.classNameList} id={props.idList}>
+        <motion.ul className={props.classNameList} id={props.idList}>
           {props.urlLink.map((urllink) => (
             <>
-              <li
+              <motion.li
                 className={`${props.classNameItem} ${
                   showMenu ? "open" : "closed"
                 }`}
@@ -57,7 +58,7 @@ function Navbar(props) {
                   </Link>
                 </Wrapper>
                 {props.children}
-              </li>
+              </motion.li>
               {tooltipText === urllink.text && (
                 <Wrapper
                   className={`tooltip-wrapper ${showMenu ? "open" : "closed"} ${
@@ -71,9 +72,9 @@ function Navbar(props) {
               )}
             </>
           ))}
-        </ul>
+        </motion.ul>
       )}
-    </nav>
+    </motion.nav>
   );
 }
 

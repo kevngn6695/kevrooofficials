@@ -1,12 +1,13 @@
 import React from "react";
 
 import { ImageProps } from "../utils/type";
+import { motion } from "framer-motion";
 
 import "../assets/style/sass/components/image.sass";
 
 function Image(props) {
   return (
-    <img
+    <motion.img
       className={props.className}
       src={props.src}
       alt={props.alt}

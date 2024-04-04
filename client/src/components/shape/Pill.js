@@ -1,9 +1,12 @@
 import React from "react";
 
 import { PillProps } from "../../utils/type";
+import { motion } from "framer-motion";
+
+import "../../assets/style/sass/components/pill.sass";
 
 function Pill(props) {
-  return <div className={props.className}>{props.children}</div>;
+  return <motion.div className={props.className}>{props.children}</motion.div>;
 }
 
 Pill.propTypes = PillProps;

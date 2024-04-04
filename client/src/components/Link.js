@@ -1,14 +1,15 @@
 import React from "react";
 
 import { LinkProps } from "../utils/type";
+import { motion } from "framer-motion";
 
 import "../assets/style/sass/components/link.sass";
 
 function Link(props) {
   return (
-    <a className={props.className} href={props.href} title={props.title}>
+    <motion.a className={props.className} href={props.href} title={props.title}>
       {props.children}
-    </a>
+    </motion.a>
   );
 }
 

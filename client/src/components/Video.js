@@ -1,13 +1,16 @@
 import React from "react";
 
 import { VideoProps } from "../utils/type";
+import { motion } from "framer-motion";
+
+import "../assets/style/sass/components/video.sass";
 
 function Video(props) {
   return (
     <>
-      <video controls autoplay loop>
+      <motion.video controls autoplay loop>
         <source src={props.src} type={props.type} />
-      </video>
+      </motion.video>
     </>
   );
 }

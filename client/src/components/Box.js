@@ -1,9 +1,11 @@
 import React from "react";
 
+import { motion } from "framer-motion";
+
 import "../assets/style/sass/components/box.sass";
 
 function Box(props) {
-  return <div className={props.className}>{props.children}</div>;
+  return <motion.div className={props.className}>{props.children}</motion.div>;
 }
 
 export default React.memo(Box);
