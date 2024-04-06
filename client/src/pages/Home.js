@@ -288,7 +288,7 @@ function Home(props) {
           ))}
         </Wrapper>
         <Work className="work-container" />
-        <Info className="main-info-container">
+        {/* <Info className="main-info-container">
           <Wrapper className="main-info-wrapper">
             <Heading className="info-title" h1>
               Let's get in touch
@@ -297,7 +297,7 @@ function Home(props) {
           <Wrapper className="main-contact-wrapper">
             <TextInput className="main-form" inputLists={inputLists} />
           </Wrapper>
-        </Info>
+        </Info> */}
       </Container>
     </>
   );

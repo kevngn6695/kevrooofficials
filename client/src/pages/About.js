@@ -71,7 +71,7 @@ function About(props) {
             corner of existence.
           </Paragraph>
         </Wrapper>
-        <Container className="about-info-container">
+        {/* <Container className="about-info-container">
           <Wrapper className="about-email-wrapper">
             <Link className="about-email-link">kevngn6695@gmail.com</Link>
           </Wrapper>
@@ -85,7 +85,7 @@ function About(props) {
               </Link>
             ))}
           </Wrapper>
-        </Container>
+        </Container> */}
       </Container>
       <Container className="about-img-container">
         <Image className="about-img" src={KevImage1} />
