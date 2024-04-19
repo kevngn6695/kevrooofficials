@@ -28,7 +28,7 @@ import ContactIconBlack from "../assets/media/images/icons/phone-icon-black/phon
 // import { motion } from "framer-motion";
 import { convertKtoF, useMousePosition } from "../utils/tools";
 import { HomeProps } from "../utils/type";
-import { fetchWeatherAPI } from "../utils/fetch";
+// import { fetchWeatherAPI } from "../utils/fetch";
 
 import "../assets/style/sass/pages/home.sass";
 
@@ -149,13 +149,13 @@ function Home(props) {
     const intervalId = setInterval(() => {
       setDate(new Date());
       setTime(new Date().toLocaleTimeString([], optionTime));
-      fetchWeatherAPI(setWeatherData)
-        .then((message) => {
-          console.log(`Successfully Resolved: ${message}`);
-        })
-        .catch((error) => {
-          console.error(`Error: ${error.message}`);
-        });
+      // fetchWeatherAPI(setWeatherData)
+      //   .then((message) => {
+      //     console.log(`Successfully Resolved: ${message}`);
+      //   })
+      //   .catch((error) => {
+      //     console.error(`Error: ${error.message}`);
+      //   });
     }, 100);
     return () => clearInterval(intervalId); // Cleanup on component unmount
   }, []); // Empty dependency array ensures the effect runs only once
@@ -199,7 +199,7 @@ function Home(props) {
                 children={`${today} ${dateStr}`}
               />
             </Wrapper>
-            <Wrapper
+            {/* <Wrapper
               className={`today-wrapper temperature ${
                 isMouseIn ? "in" : "out"
               }`}
@@ -215,7 +215,7 @@ function Home(props) {
               ) : (
                 <Loading />
               )}
-            </Wrapper>
+            </Wrapper> */}
             <Wrapper
               className={`today-wrapper full-time ${isMouseIn ? "in" : "out"}`}
             >
